@@ -2,7 +2,8 @@ function Invoke-PSAnsiblePlaybook {
  
     param(
         [String]$Playbook,
-        [switch]$AskVaultPass
+        [switch]$AskVaultPass,
+        [String]$I
     )
 
     # Create Instance of PSAnsiblePlaybook
@@ -11,6 +12,10 @@ function Invoke-PSAnsiblePlaybook {
     # Set Parameters
     if($AskVaultPass){
         $PSAnsiblePlaybook.AddParam("--ask-vault-pass","",$true)
+    }
+
+    if($I){
+        $PSAnsiblePlaybook.AddParam("-i",$i,$false)
     }
      
     # Generate ExcecutionString

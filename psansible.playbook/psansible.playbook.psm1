@@ -1,4 +1,4 @@
-#Generated at 03/27/2022 18:09:47 by Kevin Bates
+#Generated at 03/27/2022 22:27:45 by Kevin Bates
 Class PSAnsiblePlaybookParam {
     [String]$ParamName
     [String]$ParamValue
@@ -91,7 +91,8 @@ function Invoke-PSAnsiblePlaybook {
  
     param(
         [String]$Playbook,
-        [switch]$AskVaultPass
+        [switch]$AskVaultPass,
+        [String]$I
     )
 
     # Create Instance of PSAnsiblePlaybook
@@ -100,6 +101,10 @@ function Invoke-PSAnsiblePlaybook {
     # Set Parameters
     if($AskVaultPass){
         $PSAnsiblePlaybook.AddParam("--ask-vault-pass","",$true)
+    }
+
+    if($I){
+        $PSAnsiblePlaybook.AddParam("-i",$i,$false)
     }
      
     # Generate ExcecutionString
