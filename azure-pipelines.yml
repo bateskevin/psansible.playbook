@@ -9,7 +9,7 @@ trigger:
 jobs:
   - job: Test_CentOS
     pool: 
-      vmImage: ubuntu:latest
+      vmImage: ubuntu-latest
     container: ubuntu:latest
     steps: 
       - script: "yum install ansible"
