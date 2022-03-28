@@ -42,6 +42,8 @@ jobs:
           sudo cat /etc/ansible/ps.yml
         displayName: Filling playbook
       - script: | 
+          sudo mv /etc/ansible/ansible.cfg /etc/ansible/ansible_old.cfg
+          sudo touch /etc/ansible/ansible.cfg
           sudo echo "[defaults]" | sudo tee -a /etc/ansible/ansible.cfg
           sudo echo "stdout_callback = json" | sudo tee -a /etc/ansible/ansible.cfg
         displayName: adding to ansible.cfg
