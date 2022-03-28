@@ -7,7 +7,7 @@ trigger:
 - main
 
 jobs:
-  - job: Test_CentOS
+  - job: AcceptanceTests
     pool: 
       vmImage: ubuntu-latest
     steps: 
