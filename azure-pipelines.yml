@@ -19,16 +19,12 @@ jobs:
         displayName: "Running Create ansible hosts file"
       - script: 'sudo echo "win:" | sudo tee -a /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
-      - script: 'sudo echo "  hosts:" | sudo tee -a /etc/ansible/hosts'
-        displayName: "Running dump dummy inventory"
-      - script: 'sudo echo "    waap:" | sudo tee -a /etc/ansible/hosts'
-        displayName: "Running dump dummy inventory"
-      - script: 'sudo echo "      ansible_host: localhost" | sudo tee -a /etc/ansible/hosts'
-        displayName: "Running dump dummy inventory"
-      - script: 'sudo echo "    woop:" | sudo tee -a /etc/ansible/hosts'
-        displayName: "Running dump dummy inventory"
-      - script: 'sudo echo "      ansible_host: localhost " | sudo tee -a /etc/ansible/hosts'
-        displayName: "Running dump dummy inventory"
+      - script: | 
+        sudo echo "  hosts:" | sudo tee -a /etc/ansible/hosts
+        sudo echo "    waap:" | sudo tee -a /etc/ansible/hosts
+        sudo echo "      ansible_host: localhost" | sudo tee -a /etc/ansible/hosts
+        sudo echo "    woop:" | sudo tee -a /etc/ansible/hosts
+        sudo echo "      ansible_host: localhost " | sudo tee -a /etc/ansible/hosts
       - script: 'sudo cat /etc/ansible/hosts'
         displayName: "Running display inventory"
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
