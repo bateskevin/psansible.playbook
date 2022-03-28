@@ -17,7 +17,7 @@ jobs:
         displayName: "Running ansible install"
       - script: "sudo touch /etc/ansible/hosts"
         displayName: "Running Create ansible hosts file"
-      - script: 'sudo echo "win:" >> /etc/ansible/hosts'
+      - script: 'sudo echo "win:" | sudo tee -a /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
       - script: 'sudo echo "  hosts:" >> /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
