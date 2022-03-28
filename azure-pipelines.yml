@@ -34,7 +34,6 @@ jobs:
           sudo echo '    hosts: win' | sudo tee -a /etc/ansible/ps.yml
           sudo echo '    connection: local' | sudo tee -a /etc/ansible/ps.yml
           sudo echo "    gather_facts: no" | sudo tee -a /etc/ansible/ps.yml
-          sudo echo "    gather_facts: no" | sudo tee -a /etc/ansible/ps.yml
           sudo echo "" | sudo tee -a /etc/ansible/ps.yml
           sudo echo "    tasks:" | sudo tee -a /etc/ansible/ps.yml
           sudo echo "    - name: First Echo of the day" | sudo tee -a /etc/ansible/ps.yml
