@@ -9,8 +9,7 @@ trigger:
 jobs:
   - job: Test_CentOS
     pool: 
-      vmImage: ubuntu-latest
-    container: ubuntu:latest
+      vmImage: centos-latest
     steps: 
       - script: "sudo apt-get yum"
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
