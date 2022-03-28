@@ -31,6 +31,8 @@ jobs:
         displayName: "Running dump dummy inventory"
       - script: 'sudo cat /etc/ansible/hosts'
         displayName: "Running display inventory"
+      - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
+        displayName: "Running Tests alpine 3.8"
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
