@@ -17,18 +17,20 @@ jobs:
         displayName: "Running ansible install"
       - script: "sudo touch /etc/ansible/hosts"
         displayName: "Running Create ansible hosts file"
-      - script: 'echo "win:" >> /etc/ansible/hosts'
+      - script: 'sudo echo "win:" >> /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
-      - script: 'echo "  hosts:" >> /etc/ansible/hosts'
+      - script: 'sudo echo "  hosts:" >> /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
-      - script: 'echo "    waap:" >> /etc/ansible/hosts'
+      - script: 'sudo echo "    waap:" >> /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
-      - script: 'echo "      ansible_host: localhost" >> /etc/ansible/hosts'
+      - script: 'sudo echo "      ansible_host: localhost" >> /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
-      - script: 'echo "    woop:" >> /etc/ansible/hosts'
+      - script: 'sudo echo "    woop:" >> /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
-      - script: 'echo "      ansible_host: localhost " >> /etc/ansible/hosts'
+      - script: 'sudo echo "      ansible_host: localhost " >> /etc/ansible/hosts'
         displayName: "Running dump dummy inventory"
+      - script: 'sudo cat /etc/ansible/hosts'
+        displayName: "Running display inventory"
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
