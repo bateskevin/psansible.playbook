@@ -17,8 +17,6 @@ jobs:
         displayName: "Running ansible install"
       - script: "sudo touch /etc/ansible/hosts"
         displayName: "Running Create ansible hosts file"
-      - script: 'sudo echo "win:" | sudo tee -a /etc/ansible/hosts'
-        displayName: "Running Creating dummy inventory"
       - script: | 
           sudo echo "win:" | sudo tee -a /etc/ansible/hosts
           sudo echo "  hosts:" | sudo tee -a /etc/ansible/hosts
@@ -43,7 +41,7 @@ jobs:
           sudo echo "      debug:" | sudo tee -a /etc/ansible/ps.yml
           sudo echo "        msg: first one" | sudo tee -a /etc/ansible/ps.yml
           sudo cat /etc/ansible/ps.yml
-        displayName: creating playbook
+        displayName: Filling playbook
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
         displayName: "Running Tests"
       - task: PublishTestResults@2
