@@ -6,14 +6,16 @@
 trigger:
 - main
 
-pool:
-  vmImage: ubuntu-latest
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+jobs:
+  - job: Test_CentOS
+    pool: 
+      vmImage: centos-latest
+    steps: 
+      - script: "yum install ansible"
+      - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
+        displayName: "Running Tests CentOS"
+      - task: PublishTestResults@2
+        condition: succeededOrFailed()
+        inputs:
+          testRunner: NUnit
+          testResultsFiles: '**/TestsResults.xml'
