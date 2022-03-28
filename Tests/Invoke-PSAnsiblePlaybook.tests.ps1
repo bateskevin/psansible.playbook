@@ -1,5 +1,5 @@
 # Importing Module
-Import-Module $PSScriptRoot\..\PSAnsible.Playbook\psansible.playbook.psd1 -Force
+Import-Module $PSScriptRoot\..\psansible.playbook\psansible.playbook.psd1 -Force
 
 Describe "[PSAnsiblePlaybook][Function][Invoke-PSAnsiblePlaybook][Basefunctionality]" {
     It "should be true" {
