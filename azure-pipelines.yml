@@ -18,15 +18,32 @@ jobs:
       - script: "sudo touch /etc/ansible/hosts"
         displayName: "Running Create ansible hosts file"
       - script: 'sudo echo "win:" | sudo tee -a /etc/ansible/hosts'
-        displayName: "Running dump dummy inventory"
+        displayName: "Running Creating dummy inventory"
       - script: | 
-        sudo echo "  hosts:" | sudo tee -a /etc/ansible/hosts
-        sudo echo "    waap:" | sudo tee -a /etc/ansible/hosts
-        sudo echo "      ansible_host: localhost" | sudo tee -a /etc/ansible/hosts
-        sudo echo "    woop:" | sudo tee -a /etc/ansible/hosts
-        sudo echo "      ansible_host: localhost " | sudo tee -a /etc/ansible/hosts
-      - script: 'sudo cat /etc/ansible/hosts'
-        displayName: "Running display inventory"
+          sudo echo "win:" | sudo tee -a /etc/ansible/hosts
+          sudo echo "  hosts:" | sudo tee -a /etc/ansible/hosts
+          sudo echo "    waap:" | sudo tee -a /etc/ansible/hosts
+          sudo echo '      ansible_host: localhost' | sudo tee -a /etc/ansible/hosts
+          sudo echo '    woop:' | sudo tee -a /etc/ansible/hosts
+          sudo echo "      ansible_host: localhost " | sudo tee -a /etc/ansible/hosts
+          sudo cat /etc/ansible/hosts
+        displayName: Filling inventory
+      - script: 'sudo touch /etc/ansible/ps.yml'
+        displayName: "Running Creating dummy playbook"
+      - script: | 
+          sudo echo "---" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "  - name: PSTest" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo '    hosts: win' | sudo tee -a /etc/ansible/ps.yml
+          sudo echo '    connection: local' | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "    gather_facts: no" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "    gather_facts: no" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "    tasks:" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "    - name: First Echo of the day" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "      debug:" | sudo tee -a /etc/ansible/ps.yml
+          sudo echo "        msg: first one" | sudo tee -a /etc/ansible/ps.yml
+          sudo cat /etc/ansible/ps.yml
+        displayName: creating playbook
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
         displayName: "Running Tests"
       - task: PublishTestResults@2
