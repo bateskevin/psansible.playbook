@@ -24,6 +24,6 @@ Describe "Testing Parameter" {
     }
     
     It "[PSAnsiblePlaybook][Function][Invoke-PSAnsiblePlaybook][Parameter] ExcecutionString" {
-        $res.param.ExcecutionString | should -be "ansible-playbook /etc/ansible/ps.yml -i /etc/ansible/hosts"
+        $res.ExcecutionString | should -be "ansible-playbook /etc/ansible/ps.yml -i /etc/ansible/hosts"
     }
 }
