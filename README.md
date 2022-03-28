@@ -4,7 +4,7 @@ PSAnsible is a list of modules to help powershell users pilot the ansible execut
 ## CI Status
 | OS | Powershell Version | status |
 | ----------- | ----------- | ----------- |
-| CentOS | Powershell Core 7.2.2       | [![Build Status](https://dev.azure.com/KevinBates0726/PSAnsible.Playbook/_apis/build/status/bateskevin.psansible.playbook?branchName=main)](https://dev.azure.com/KevinBates0726/PSAnsible.Playbook/_build/latest?definitionId=2&branchName=main)       |
+| Ubuntu | Powershell Core 7.2.2       | [![Build Status](https://dev.azure.com/KevinBates0726/PSAnsible.Playbook/_apis/build/status/bateskevin.psansible.playbook?branchName=main)](https://dev.azure.com/KevinBates0726/PSAnsible.Playbook/_build/latest?definitionId=2&branchName=main)       |
 ## Summary
 
 This means, for example, instead of <ANSIBLE OUTPUTFORMAT NAME> in a console, we can get object back, 
