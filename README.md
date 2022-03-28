@@ -7,9 +7,9 @@ PSAnsible is a list of modules to help powershell users pilot the ansible execut
 | Ubuntu | Powershell Core 7.2.2       | [![Build Status](https://dev.azure.com/KevinBates0726/PSAnsible.Playbook/_apis/build/status/bateskevin.psansible.playbook?branchName=main)](https://dev.azure.com/KevinBates0726/PSAnsible.Playbook/_build/latest?definitionId=2&branchName=main)       |
 ## Summary
 
-This means, for example, instead of <ANSIBLE OUTPUTFORMAT NAME> in a console, we can get object back, 
-which we then in turn can use further programmatically. This enables things like building reports 
-based on Powershell objects from a CLI, easier debugging of playbook runs or even pester tests for ansible playbooks.
+Instead of text in a console, we can get objects back, which we then in turn can use further programmatically. 
+This enables things like building reports based on Powershell objects from a CLI, easier debugging of playbook 
+runs or even pester tests for ansible playbooks.
 
 This module basically enables you to run an ansible playbook from within a Powershell Session/Script and continue your process with the result of the playbook run, whatever that may be.
 
