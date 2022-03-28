@@ -12,7 +12,7 @@ jobs:
       vmImage: ubuntu-latest
     container: ubuntu:latest
     steps: 
-      - script: "yum install ansible"
+      - script: "sudo apt-get yum"
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
         displayName: "Running Tests CentOS"
       - task: PublishTestResults@2
