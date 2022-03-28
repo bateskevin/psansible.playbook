@@ -16,11 +16,11 @@ Describe "Testing Parameter" {
     }
     
     It "[PSAnsiblePlaybook][Function][Invoke-PSAnsiblePlaybook][Parameter] ParamValue" {
-        $res.param.ParamName | should -be "/etc/ansible/hosts"
+        $res.param.ParamValue | should -be "/etc/ansible/hosts"
     }
     
     It "[PSAnsiblePlaybook][Function][Invoke-PSAnsiblePlaybook][Parameter] IsBool" {
-        $res.param.ParamName | should -be $false
+        $res.param.IsBool | should -be $false
     }
     
     It "[PSAnsiblePlaybook][Function][Invoke-PSAnsiblePlaybook][Parameter] ExcecutionString" {
