@@ -32,7 +32,7 @@ jobs:
       - script: 'sudo cat /etc/ansible/hosts'
         displayName: "Running display inventory"
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
-        displayName: "Running Tests alpine 3.8"
+        displayName: "Running Tests"
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
