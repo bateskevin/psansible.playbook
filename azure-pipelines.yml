@@ -9,7 +9,7 @@ trigger:
 jobs:
   - job: Test_CentOS
     pool: 
-      vmImage: centos-latest
+      vmImage: centos
     steps: 
       - script: "yum install ansible"
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
