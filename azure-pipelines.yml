@@ -41,6 +41,10 @@ jobs:
           sudo echo "        msg: first one" | sudo tee -a /etc/ansible/ps.yml
           sudo cat /etc/ansible/ps.yml
         displayName: Filling playbook
+      - script: | 
+          sudo echo "[defaults]" | sudo tee -a /etc/ansible/ansible.cfg
+          sudo echo "stdout_callback = json" | sudo tee -a /etc/ansible/ansible.cfg
+        displayName: adding to ansible.cfg
       - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
         displayName: "Running Tests"
       - task: PublishTestResults@2
