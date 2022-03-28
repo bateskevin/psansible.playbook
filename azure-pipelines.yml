@@ -12,9 +12,23 @@ jobs:
       vmImage: ubuntu-latest
     steps: 
       - script: "sudo apt update"
+        displayName: "Running apt update"
       - script: "sudo apt install ansible"
-      - script: "pwsh -c ./CI/Tests.AzureDevops.ps1"
-        displayName: "Running Tests CentOS"
+        displayName: "Running ansible install"
+      - script: "sudo touch /etc/ansible/hosts"
+        displayName: "Running Create ansible hosts file"
+      - script: 'echo "win:" >> /etc/ansible/hosts'
+        displayName: "Running dump dummy inventory"
+      - script: 'echo "  hosts:" >> /etc/ansible/hosts'
+        displayName: "Running dump dummy inventory"
+      - script: 'echo "    waap:" >> /etc/ansible/hosts'
+        displayName: "Running dump dummy inventory"
+      - script: 'echo "      ansible_host: localhost" >> /etc/ansible/hosts'
+        displayName: "Running dump dummy inventory"
+      - script: 'echo "    woop:" >> /etc/ansible/hosts'
+        displayName: "Running dump dummy inventory"
+      - script: 'echo "      ansible_host: localhost " >> /etc/ansible/hosts'
+        displayName: "Running dump dummy inventory"
       - task: PublishTestResults@2
         condition: succeededOrFailed()
         inputs:
