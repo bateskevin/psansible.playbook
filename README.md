@@ -1,6 +1,8 @@
 # psansible.playbook
 PSAnsible is a list of modules to help powershell users pilot the ansible executables in a more "powershellesque" way.
 
+Check out this [BLog Post](https://bateskevin.github.io/batesbase/Ansible/2022/03/29/Introducing-PSAnsible.Playbook.md/) for more details on the project.
+
 ## CI Status
 | OS | Powershell Version | status |
 | ----------- | ----------- | ----------- |
